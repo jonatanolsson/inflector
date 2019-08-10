@@ -16,13 +16,9 @@ class Inflectible
 	 */
 	public static function getSingular(): iterable
 	{
-		// er
 		yield new Transformation(new Pattern('/([tmnslpr])er$/i'), '\1');
 
-		// or
 		yield new Transformation(new Pattern('/or$/i'), 'a');
-
-		// ar
 
 		yield new Transformation(new Pattern('/mar$/i'), 'me');
 		yield new Transformation(new Pattern('/kar$/i'), 'ke');
@@ -30,14 +26,11 @@ class Inflectible
 		yield new Transformation(new Pattern('/lar$/i'), 'l');
 		yield new Transformation(new Pattern('/glar$/i'), 'gel');
 
-		// er
 		yield new Transformation(new Pattern('/ler$/i'), 'el');
 
-		// r
 		yield new Transformation(new Pattern('/der$/i'), 'de');
 		yield new Transformation(new Pattern('/ader$/i'), 'ad');
 
-		// n
 		yield new Transformation(new Pattern('/en$/i'), 'e');
 
 		yield new Transformation(new Pattern('/tlar$/i'), 'tel');
@@ -61,19 +54,15 @@ class Inflectible
 	 */
 	public static function getPlural(): iterable
 	{
-		// -er
 		yield new Transformation(new Pattern('/([tmnslpr])$/i'), '\1er');
 
-		// -or
 		yield new Transformation(new Pattern('/a$/i'), 'or');
 
-		// -ar
 		yield new Transformation(new Pattern('/e$/i'), 'ar');
 		yield new Transformation(new Pattern('/g$/i'), 'gar');
 		yield new Transformation(new Pattern('/l$/i'), 'lar');
 		yield new Transformation(new Pattern('/el$/i'), 'lar');
 
-		// -er
 		yield new Transformation(new Pattern('/kell$/i'), 'kler');
 		yield new Transformation(new Pattern('/tel$/i'), 'tlar');
 
@@ -93,7 +82,6 @@ class Inflectible
 		yield new Transformation(new Pattern('/and$/i'), 'änder');
 		yield new Transformation(new Pattern('/i$/i'), 'ier');
 		yield new Transformation(new Pattern('/mi$/i'), 'min');
-//		inflect.plural(/de$/i, 'der') # fiende, fiender
 
 	}
 
@@ -103,6 +91,5 @@ class Inflectible
 	public
 	static function getIrregular()
 	{
-//		yield new Substitution(new Word('axs'), new Word('axs'));
 	}
 }
